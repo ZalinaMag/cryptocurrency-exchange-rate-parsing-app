@@ -1,0 +1,57 @@
+services:
+  my_crypto_container:
+    image: my_crypto_project
+    container_name: my_crypto_container
+    command: ["python", "-u", "/app/main.py"]
+    networks:
+      - bridge_network
+    environment:
+      - PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      - LANG=C.UTF-8
+      - GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568
+      - PYTHON_VERSION=3.9.20
+    volumes:
+      - ./app:/app
+    depends_on:
+      - postgres
+      - mailcatcher
+
+  mailcatcher:
+    image: dockage/mailcatcher
+    container_name: mailcatcher
+    command: ["mailcatcher", "-f", "--ip", "0.0.0.0"]
+    ports:
+      - "1025:1025"
+      - "1080:1080"
+    networks:
+      - bridge_network
+
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: your_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - bridge_network
+
+  cloudbeaver:
+    image: dbeaver/cloudbeaver
+    container_name: cloudbeaver
+    ports:
+      - "8080:8978"
+    networks:
+      - bridge_network
+    depends_on:
+      - postgres
+
+networks:
+  bridge_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
