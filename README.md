@@ -1,11 +1,12 @@
 ## Project for Cryptocurrency Price Monitoring and Email Notifications written in Python & Dockerfile
-It continuously monitors price changes and reacts in near real-time in a resource-efficient, asynchronous manner.
+This is headless backend application that continuously monitors price changes and reacts in near real-time in a resource-efficient, asynchronous manner.
 
 ### Features
 The app:
-- fetches and processes cryptocurrency prices from various exchanges every 2 minutes
-- compares current price data to previous values
-- possibly sends email alerts and writes updated data to the database
+- automatically scrapes cryptocurrency exchange rates from online sources every 2 minutes 
+- stores data in a database
+- compares rate changes between entries
+- if a currency’s value increases by ≥0.03% generates email reports with total savings value in the user’s preferred currency and with calculated difference (profit/loss) from the rate change.
   
 ### Requirements
 
