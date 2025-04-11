@@ -1,5 +1,12 @@
-## Project for Cryptocurrency Price Monitoring and Email Notifications
+## Project for Cryptocurrency Price Monitoring and Email Notifications written in Python & Dockerfile
+It continuously monitors price changes and reacts in near real-time in a resource-efficient, asynchronous manner.
 
+### Features
+The app:
+- fetches and processes cryptocurrency prices from various exchanges every 2 minutes
+- compares current price data to previous values
+- possibly sends email alerts and writes updated data to the database
+  
 ### Requirements
 
 - [Docker](https://www.docker.com/)
