@@ -1,4 +1,4 @@
-## Project for Cryptocurrency Price Monitoring and Email Notifications written in Python & Dockerfile
+## App for Cryptocurrency Price Monitoring and Email Notifications written in Python & Dockerfile
 This is headless backend application that continuously monitors price changes and reacts in near real-time in a resource-efficient, asynchronous manner.
 
 ### Features
