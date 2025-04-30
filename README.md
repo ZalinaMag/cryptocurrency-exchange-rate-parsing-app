@@ -1,6 +1,9 @@
 ## App for Cryptocurrency Price Monitoring and Email Notifications written in Python & Dockerfile
 This is headless backend application that continuously monitors price changes and reacts in near real-time in a resource-efficient, asynchronous manner.
 
+### Stack
+<img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue" /> <img src="https://img.shields.io/badge/Docker%20Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+
 ### Features
 The app:
 - automatically scrapes cryptocurrency exchange rates from online sources every 2 minutes 
